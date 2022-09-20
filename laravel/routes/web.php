@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\pokemonController;
+use App\Http\Controllers\gestaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,8 @@ Route::get('/', function () {
 });
 
 Route::get('/pokemon', [pokemonController::class, 'index']);
+
+// Routes Gestão
+Route::get('/gestao', [gestaoController::class, 'index'])->name('gestao.index');
+Route::get('/gestao/contato', [gestaoController::class, 'contato'])->name('gestao.contato');
+Route::get('/gestao/sobre-nos', [gestaoController::class, 'sobreNos'])->name('gestao.sobre-nos');
